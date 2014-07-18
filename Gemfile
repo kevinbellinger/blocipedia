@@ -13,7 +13,6 @@ group :development do
   gem 'sqlite3'
 end
 
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +35,43 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+
+#Adding RSpec
+gem 'rspec-rails'
+
+# Adding the faker Gem
+gem 'faker'
+
+# Adding the Devise Gem
+gem 'devise'
+
+#Adding Pagination
+gem 'will_paginate', '~> 3.0.5'
+
+# Adding Factory-Girl
+gem 'factory_girl_rails', '~> 4.0'
+
+#Adding Database Cleaner
+gem 'database_cleaner'
+
+# Adding Gem - Bootstrap-sass
+gem 'bootstrap-sass', '~> 3.1.1'
+
+#Adding Figaro
+gem 'figaro'
+
+#Adding TDD gems
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
+#Adding Pundit
+gem 'pundit' 
+
+#Adding Whenever
+# gem 'whenever'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
