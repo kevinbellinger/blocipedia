@@ -36,10 +36,6 @@ gem 'spring',        group: :development
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-
-#Adding RSpec
-gem 'rspec-rails'
-
 # Adding the faker Gem
 gem 'faker'
 
@@ -69,6 +65,12 @@ end
 
 #Adding Pundit
 gem 'pundit' 
+
+#Adding Redcarpet
+gem 'redcarpet'
+
+#Adding Friendly ID
+gem 'friendly_id', '~> 5.0.0'
 
 #Adding Whenever
 # gem 'whenever'
