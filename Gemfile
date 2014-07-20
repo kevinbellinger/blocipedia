@@ -72,6 +72,12 @@ gem 'redcarpet'
 #Adding Friendly ID
 gem 'friendly_id', '~> 5.0.0'
 
+#Adding Image support for User Avatars.
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
+
 #Adding Whenever
 # gem 'whenever'
 

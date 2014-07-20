@@ -9,3 +9,12 @@ SENDGRID_PASSWORD: is0ohrf6
 
 #Devise secret
 DEVISE_SECRET_KEY: fa965aa395ec7021779da33b08b0b1e8c0521b0f000565d4e125b01a5b0a5c4149f3380e540cf92149ed6471176619a9b942547a3ad1d6fc3260e16b453c5c19
+
+#Adding AWS support for Avatars and wiki pics
+AWS_ACCESS_KEY_ID: AKIAIFF63L5OHPF4QAMA
+AWS_SECRET_ACCESS_KEY: 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
+development:
+  AWS_BUCKET: kevinb-blocipedia-development
+production:
+  AWS_BUCKET:  kevinb-blocipedia-production
+
