@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'blocipedia/index'
 
   devise_for :users
+    resources :users, only: [:update]
+
   get 'welcome/index'
 
   get 'welcome/about'
