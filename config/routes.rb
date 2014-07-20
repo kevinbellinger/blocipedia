@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
  
+  get 'users/index'
+
+  get 'blocipedia/index'
+
   devise_for :users
   get 'welcome/index'
 
