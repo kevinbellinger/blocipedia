@@ -1,4 +1,5 @@
  @import "bootstrap";
+ @import 'variables';
 
  .user-info {
    margin-top: 9px;
@@ -7,3 +8,210 @@
  .nav {
    margin-top: 5px;
  }
+
+
+// From Glider.io
+
+ body{
+  margin:0;
+  padding:0;
+  font-family: 'proxima_nova_rgregular', arial, sans-serif;
+  font-size:13px; 
+  color:#848484; 
+}
+
+/*** COMMON CSS ***/
+.main-container {
+  background: url(/assets/bg-top.png) repeat-x;
+
+  min-height: 100%;
+  height: auto !important; /*min-height hack*/
+  height: 100%;            /*min-height hack*/
+  margin-bottom: -$footer-height-with-padding;     /*Negates #push on longer pages*/
+}
+
+strong{ font-family:'proxima_novasemibold';}
+
+.details_holder { 
+  background: url(/assets/bg-details.png) repeat-x;
+}
+
+.home-splash-container {
+  margin:0 auto; 
+  img{ border:0; }
+  h1, h2, h3, h4, h5{margin:0; padding:0; line-height:normal; width:100%;font-family:'proxima_novasemibold';}
+  ul{ margin:0; padding:0; width:100%; float:left; }
+  ul li{ list-style:none; float:left; }
+}
+
+
+/*** HEADER ****/
+.header{ 
+  padding: 10px 2% 0 2%; 
+  height:72px;
+}
+
+.header-content{ 
+  text-align: center;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.header-navigation {
+  float: right;
+  margin: 16px 100px 0;
+
+  text-align: left;
+  a {
+    color: $new-marketing-blue-text; 
+    text-decoration:none; 
+  }
+
+  a:focus { outline: none; }
+  a:hover{
+    color:#000;
+    text-decoration:none; 
+  }
+
+  // this select was for languages but isnt really used
+  select{
+    border:1px solid #ccc;
+    padding:5px;
+    font-size:14px; 
+    color:#666;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+  }
+
+
+  ul li { 
+    display: inline; 
+    float: left;
+  }
+
+  ul li + li { border-left: 1px solid #e6e6e6; }
+  ul li a { 
+    float: left; 
+    display: inline; 
+    padding: 10px 19px; 
+    color: #2884e2; 
+  }
+
+  ul li a.delete { color: #b94a48;}
+  ul li a span { 
+    display: block; 
+    font-size: 13px; 
+    color: #555;
+    padding-top: 2px;
+  }
+
+  ul li a.active,
+  ul li a:hover { 
+    text-decoration: none; 
+    color: #292929; 
+  }
+
+  .dropdown li {
+    float: none;
+    display: block;
+    a {
+      float: none;
+      display: block;
+    }
+  }
+  .dropdown li span {
+    display: inline; 
+    font-size: 13px; 
+    color: #555;
+  }
+}
+
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle {
+  background: none;
+  border-color: none;
+  color: $new-marketing-blue-text;
+}
+
+.logo{ 
+  width:200px;
+  float:left;
+}
+
+
+/*** FOOTER ****/
+
+
+@media screen {
+  #slider {width:1020px; float:left;}
+  .scroll {width:1020px; float:left;}
+  .scrollContainer div.panel {width:1020px; float:left; height:auto; padding:15px 0;}
+  
+  ul.navigation {list-style:none;margin:0;padding:0; height:62px;}
+  ul.navigation li{display:inline; height:62px; text-align:center;}
+  ul.navigation li.nospace{border:0;}
+  ul.navigation li a{display:block; float:left; width:254px; height:49px; padding:13px 0 0 0;}
+  ul.navigation li a:hover {background:url(/assets/tab-ov.png) no-repeat center 0;}
+  ul.navigation li a.selected {background:url(/assets/tab-ov.png) no-repeat center 0;}
+  ul.navigation a:focus {outline:none;}
+  
+  .scrollButtons {position:absolute;top:380px;cursor:pointer;}
+  .scrollButtons.left {left:50px; height:41px; width:33px;}
+  .scrollButtons.right {right:50px;height:41px; width:33px;}
+  .hide {display:none;}
+}
+
+
+.footer-padder {
+  height: $footer-height-with-padding;
+}
+
+.footer-container {
+  height: $footer-height-with-padding;
+  width: 100%;
+}
+
+.footer {
+  clear: both;
+  background: $footer-bg;
+  color: $footer-color;
+  height: $footer-height;
+  padding: $footer-vertical-padding 30px;
+
+  .copy-notice {
+    color: $footer-passive-color;
+    line-height: $nav-line-height;
+  }
+
+  ul.company-links {
+    margin-left: 30px;
+    li {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 0px;
+      padding-left: 10px;
+      border-left: 1px solid;
+      a {
+        color: $footer-color;
+      }
+
+      a:hover {
+        background: $footer-bg;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul.company-links li:nth-child(1) {
+    border-left: 0;
+  }
+
+  ul.socials {
+    float: right;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

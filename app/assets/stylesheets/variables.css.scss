@@ -1,0 +1,52 @@
+$bg-highlight: #dfdfdf;
+
+$bg-bright-highlight: #4d90fe;
+$fg-bright-highlight: #fff;
+
+$link-color: #ffffff;
+$link-bg: #189cda;
+$header-link-color: #189dd6;
+$link-bg-darker: #1489be;
+
+
+$relaxed-bg: #e7e7e7;
+$relaxed-color: #606060;
+$relaxed-link: #189cda;
+$relaxed-small-color: #929292;
+$relaxed-quote-color: #199ed9;
+
+$footer-bg: #333333;
+$footer-color: #e3e3e3;
+$footer-passive-color: #a3a3a3;
+
+
+
+$nav-line-height: 20px;
+
+$maingui-popup-width: 836px;
+$popup-width: 635px;
+$popup-height: 646px; // this will be changed dynamically
+
+$tabs-container-width: 679px;
+
+$maingui-height: 646px; // this can be larger than the modal height. a scroll bar will then appear.
+
+$popup-padding: 15px;
+
+$popup-section-margin: 15px;
+$popup-section-width: (($popup-width - (2 * $popup-padding))  / 2) - (2 * $popup-section-margin);
+
+$pages-standard-width: 1020px; 
+$standard-width: 930px;
+$smaller-width: 910px;
+
+$flash-width: 200px;
+
+$training-page-width: 720px;
+$training-page-splash-height: 350px;
+
+$new-marketing-blue-text: #189CDA;
+
+$footer-height: 40px;
+$footer-vertical-padding: 10px;
+$footer-height-with-padding: $footer-height + (2 * $footer-vertical-padding);
