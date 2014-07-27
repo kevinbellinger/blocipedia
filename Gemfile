@@ -70,7 +70,7 @@ gem 'pundit'
 gem 'redcarpet'
 
 #Adding Friendly ID
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id'
 
 #Adding Image support for User Avatars.
 gem 'carrierwave'

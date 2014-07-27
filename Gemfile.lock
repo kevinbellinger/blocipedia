@@ -240,7 +240,7 @@ DEPENDENCIES
   faker
   figaro
   fog
-  friendly_id (~> 5.0.0)
+  friendly_id
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick

@@ -25,3 +25,14 @@
      <% end %>
    </div>
  </div>
+
+
+ <script src="epiceditor.min.js"></script>
+<script>
+  var editor = new EpicEditor().load();
+  editor.getElement('editor').body.innerHTML = '<%= escape_javascript(@wikis.body) %>';
+
+  function prep() {
+    $("#body")[0].value = (editor.getElement('editor').body.innerHTML);
+  }
+</script>

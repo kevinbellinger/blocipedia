@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+#    extend FriendlyId
+ # friendly_id :name, use: :slugged
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :wikis
   mount_uploader :avatar, AvatarUploader
+
+
 
    def role?(base_role)
    role == base_role.to_s
