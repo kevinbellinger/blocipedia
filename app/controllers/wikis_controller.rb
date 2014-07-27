@@ -1,21 +1,33 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wikis.all
+    @wikis = Wiki.all
   end
 
   def show
-    @wikis = Wikis.find(params[:id])
+    @wikis = Wiki.find(params[:id])
   end
 
   def new
-    @wikis = Wikis.new
+    @wikis = Wiki.new
   end
 
   def edit
+     @wikis = Wiki.find(params[:id])
   end
 
+   def update
+     @wikis = Wiki.find(params[:id])
+     if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
+       flash[:notice] = "Wiki was updated."
+       redirect_to @wikis
+     else
+       flash[:error] = "There was an error saving the wiki. Please try again."
+       render :edit
+     end
+   end
+
   def create
-    @wikis = Wikis.new(params.require(:wikis).permit(:title, :body))
+    @wikis = Wiki.new(params.require(:wiki).permit(:title, :body))
      if @wikis.save
        flash[:notice] = "Wiki was saved."
        redirect_to @wikis
