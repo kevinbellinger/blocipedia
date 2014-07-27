@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
  
-  get 'users/index'
+resources :wikis
+resources :charges
+devise_for :users
+  resources :users, only: [:update]
 
-  get 'blocipedia/index'
-
-  devise_for :users
-    resources :users, only: [:update]
-
-  get 'welcome/index'
-
-  get 'welcome/about'
+  get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
-
-  resources :charges
 
  end
