@@ -25,17 +25,30 @@ caitlin = User.new(
 caitlin.skip_confirmation!
 caitlin.save
 
+# Create Extra Users
+5.times do
+  user = User.new(
+    name:     Faker::Name.name,
+    email:    Faker::Internet.email,
+    password: Faker::Lorem.characters(10)
+  )
+  user.skip_confirmation!
+  user.save
+end
+users = User.all
+
 
  # Create Generic Wiki's
  50.times do
-   Wikis.create(
+   Wiki.create(
+     user:   users.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
    )
  end
- wikis = Wikis.all
+ wikis = Wiki.all
  
  
  puts "Seed finished"
- puts "#{Wikis.count} posts created"
+ puts "#{Wiki.count} wikis created"
 
