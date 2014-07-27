@@ -67,6 +67,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    epic-editor-rails (0.2.3)
+      railties (>= 3.2, < 5.0)
     erubis (2.7.0)
     excon (0.38.0)
     execjs (2.2.1)
@@ -233,6 +235,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  epic-editor-rails
   factory_girl_rails (~> 4.0)
   faker
   figaro

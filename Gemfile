@@ -77,6 +77,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+#EpicEditor
+gem 'epic-editor-rails'
 
 #Adding Whenever
 # gem 'whenever'
