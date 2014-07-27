@@ -1,7 +1,6 @@
 class Wiki < ActiveRecord::Base
 
-  belongs_to :user
-  belongs_to :wikilist
-
+has_many :users
+belongs_to :user
 
 end
