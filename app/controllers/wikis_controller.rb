@@ -7,7 +7,10 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wikis = Wiki.find(params[:id])
+    @wikis = Wiki.friendly.find(params[:id])
+   if request.path != wiki_path(@wikis)
+      redirect_to @wikis, status: :moved_permanently
+    end
   end
 
   def new
@@ -16,12 +19,12 @@ class WikisController < ApplicationController
   end
 
   def edit
-     @wikis = Wiki.find(params[:id])
+     @wikis = Wiki.friendly.find(params[:id])
      authorize @wikis
   end
 
    def update
-     @wikis = Wiki.find(params[:id])
+     @wikis = Wiki.friendly.find(params[:id])
      authorize @wikis
      if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
        flash[:notice] = "Wiki was updated."
