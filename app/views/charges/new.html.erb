@@ -1,4 +1,10 @@
-<%= form_tag charges_path do %>
+<br/>
+<div class="jumbotron">
+  <h1>Get Blocipedia Premium now!</h1>
+  <h4> Take advantage of unlimited public and private wikis, the ability to collaborate with other users and the warm fuzzy feeling of helping pay to run the site by signing up as a premium user today. </h4>
+
+  <p>
+      <%= form_tag charges_path do %>
   <article>
     <label class="amount">
       <span>Amount: $5.00</span>
@@ -9,4 +15,11 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount="500"></script>
+<%= link_to "No Thanks", root_path, class: 'btn btn-success' %>
+
 <% end %>
+  </p>
+</div>
+    
+   </div>
+ </div>

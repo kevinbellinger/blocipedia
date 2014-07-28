@@ -11,8 +11,6 @@ class User < ActiveRecord::Base
   has_many :wikis
   mount_uploader :avatar, AvatarUploader
 
-
-
    def role?(base_role)
    role == base_role.to_s
  end
