@@ -7,14 +7,14 @@
       <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: $9.98</span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"></script>
+          data-amount="998"></script>
 <%= link_to "No Thanks", root_path, class: 'btn btn-success' %>
 
 <% end %>
