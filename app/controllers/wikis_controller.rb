@@ -2,8 +2,8 @@ class WikisController < ApplicationController
   respond_to :html, :js
 
   def index
-    @wikis = Wiki.all
-    authorize @wikis
+    @wikis = current_user.wikis
+    # authorize @wikis
   end
 
   def show
@@ -15,12 +15,16 @@ class WikisController < ApplicationController
 
   def new
     @wikis = Wiki.new
-    authorize @wikis
+    # authorize @wikis
+    #adding as collab was nested under wikis in routes. Not sure am right. 
+    @collaborators = Collaborator.new
   end
 
   def edit
      @wikis = Wiki.friendly.find(params[:id])
-     authorize @wikis
+    # authorize @wikis
+    #adding as collab was nested under wikis in routes. Not sure am right. 
+    #@collaborators = Collaborator.new
   end
 
    def update
@@ -36,7 +40,6 @@ class WikisController < ApplicationController
    end
 
   def create
-   # @wikis = Wiki.new(params.require(:wiki).permit(:title, :body))
     @wikis = current_user.wikis.build(params.require(:wiki).permit(:title, :body))
     authorize @wikis
      if @wikis.save
