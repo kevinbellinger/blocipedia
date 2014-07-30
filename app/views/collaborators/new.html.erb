@@ -1,0 +1,26 @@
+<h2>Add and Remove collaborators</h2>
+
+<div class="panel panel-default">
+
+      <div class="Panel-body">
+        <table class="table">
+          <thead >
+            <tr>
+              <th>Name</th>
+              <th>Email Address</th>
+              <th>Grant Access</th>
+              <th>Remove Access</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+            </tr>
+          <tbody>
+            <%= render partial: 'collaborators/collaborator', collection: @collaborators %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+</br>
+<%=link_to "Back to Edit", :back %>

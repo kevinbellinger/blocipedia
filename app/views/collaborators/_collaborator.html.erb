@@ -1,0 +1,9 @@
+<tr>
+      <td><%= link_to user.name, user %></td>
+     
+      <td><%= "#{daysLeft}" %></td>
+     <td><%= link_to '', collaborators, id: 'collaborators-delete', method: :destroy, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
+    <td><%= link_to '', todo, id: 'todo-delete', method: :delete, class: 'glyphicon glyphicon-remove-circle', remote: true %></td>
+  <% end %>
+</tr>
+<% end %>
