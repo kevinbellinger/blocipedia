@@ -1,28 +1,30 @@
 class CollaboratorsController < ApplicationController
   respond_to :html, :js
 
-  #commenting out as I nested collaborator under wikis and was specific on routes.
-  #def new
-   # @collaborators = Collaborator.new
-  #end
 
-  #  def index
-  #  @collaborators = Collaborator.all
-  #  end
+  def new
+   @users = User.all.to_a
+  # @collaborators = Collaborator.new 
+  end
+
+    #def index
+    #@collaborators = Collaborator.all
+    #end
 
   #def show
   #  @collaborator = Collaborator.find(params[:id])
   #end
 
     def create
-      @wikis = current_user.wikis.build(params.require(:wiki).permit(:title, :body))
-      @collaborator = @wiki.collaborators.build(params.require(:collaborator).permit(:user_id, :wiki_id))
 
-      if @collaborator.save
-        flash[:notice] = "Successfully added Collaborator"
-      else
-        flash[:error] = "Error adding collaborator. Try again"
-      end  
+     # @wikis = current_user.wikis.build(params.require(:wiki).permit(:title, :body))
+      @collaborator = Collaborators.new(user_id: params[:user_id], wiki_id:  @wikis.slug)
+
+#      if @collaborator.save
+ #       flash[:notice] = "Successfully added Collaborator"
+  #    else
+   #     flash[:error] = "Error adding collaborator. Try again"
+    #  end  
     end
 
   def destroy

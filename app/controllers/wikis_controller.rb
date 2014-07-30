@@ -17,7 +17,7 @@ class WikisController < ApplicationController
     @wikis = Wiki.new
     # authorize @wikis
     #adding as collab was nested under wikis in routes. Not sure am right. 
-    @collaborators = Collaborator.new
+    # @collaborators = Collaborator.new
   end
 
   def edit
