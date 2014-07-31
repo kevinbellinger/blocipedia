@@ -1,6 +1,17 @@
+
+<%= form_for @collaborator do |f| %>
+<% @collaborators.each do |collaborator| %>
 <tr>
-    <td><%= link_to collaborator.name, root_url %></td>
-    <td><%= link_to collaborator.email, root_url %></td>
-    <td><%= link_to '', collaborator, id: 'collaborators-create', method: :update, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
-    <td><%= link_to '', collaborator, id: 'collaborator-destroy', method: :destroy, class: 'glyphicon glyphicon-remove-circle', remote: true %></td>
+  <td><%= collaborator.name %></td>
+  <td><%= collaborator.email %></td>
+  <td> <%= f.check_box :allowed  %> </td>
 </tr>
+
+<% end %>
+<tbody>
+ <tr>
+  <%=f.hidden_field :wiki_id, value: params[:wiki_id]%>
+  <td><%= f.submit %> </td>
+</tr>
+</tbody>
+<% end %>

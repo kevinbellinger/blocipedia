@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140729115536) do
   create_table "collaborators", force: true do |t|
     t.integer "user_id"
     t.integer "wiki_id"
+    t.boolean "allowed"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
