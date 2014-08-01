@@ -2,15 +2,18 @@
 <%= form_for @collaborator do |f| %>
 <% @collaborators.each do |collaborator| %>
 <tr>
+  <td><%= collaborator.id %></td>
   <td><%= collaborator.name %></td>
-  <td><%= collaborator.email %></td>
+
   <td> <%= f.check_box :allowed  %> </td>
 </tr>
 
 <% end %>
 <tbody>
  <tr>
-  <%=f.hidden_field :wiki_id, value: params[:wiki_id]%>
+  <%=f.hidden_field :wiki_id, value: params[:wiki_id] %>
+  <%=f.hidden_field :user_id, value: params[:user_id] %>
+  <%=f.hidden_field :allowed, value: "true" %>
   <td><%= f.submit %> </td>
 </tr>
 </tbody>
