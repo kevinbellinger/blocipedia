@@ -81,6 +81,9 @@ gem 'fog'
 gem 'epic-editor-rails'
 
 
+#Adding pagination for ease of use
+gem 'will_paginate', '~> 3.0.5'
+
 #Adding Whenever
 # gem 'whenever'
 

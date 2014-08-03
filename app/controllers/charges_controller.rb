@@ -11,7 +11,7 @@ class ChargesController < ApplicationController
       :email => current_user.email,
       :plan => "Premium",
       :card  => params[:stripeToken]
-    )
+      )
 
     #adding writeback to customer account for access.
     current_user.update_attribute(:role, "premium")
@@ -24,9 +24,9 @@ class ChargesController < ApplicationController
      # :currency    => 'usd'
    # )
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
-  end
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to charges_path
+end
 
 end

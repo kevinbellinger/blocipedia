@@ -23,7 +23,7 @@ class CollaboratorsController < ApplicationController
 
   def create
     @wiki = Wiki.friendly.find(params[:collaborator][:wiki_id])
-     @collaborator = @wiki.collaborators.build(collaborator_params)   
+    @collaborator = @wiki.collaborators.build(collaborator_params)   
     if @collaborator.save
       redirect_to :back 
       flash[:notice] = "Successfully added Collaborator"
