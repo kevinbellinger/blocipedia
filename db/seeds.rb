@@ -16,6 +16,7 @@ kevin.skip_confirmation!
 kevin.save
 
 
+
 caitlin = User.new(
   name:     'Caitlin',
   email:    'caitlin@example.com',
@@ -24,6 +25,7 @@ caitlin = User.new(
 )
 caitlin.skip_confirmation!
 caitlin.save
+
 
 # Create Extra Users
 5.times do
@@ -34,6 +36,7 @@ caitlin.save
   )
   user.skip_confirmation!
   user.save
+
 end
 users = User.all
 
