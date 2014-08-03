@@ -16,14 +16,14 @@ class WikisController < ApplicationController
 
   def new
     @wikis = Wiki.new
-    # authorize @wikis
+    authorize @wikis
     #adding as collab was nested under wikis in routes. Not sure am right. 
     # @collaborators = Collaborator.new
   end
 
   def edit
    @wikis = Wiki.friendly.find(params[:id])
-    # authorize @wikis
+   authorize @wikis
     #adding as collab was nested under wikis in routes. Not sure am right. 
     #@collaborators = Collaborator.new
   end
