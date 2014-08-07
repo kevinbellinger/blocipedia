@@ -42,9 +42,6 @@ gem 'faker'
 # Adding the Devise Gem
 gem 'devise'
 
-#Adding Pagination
-gem 'will_paginate', '~> 3.0.5'
-
 # Adding Factory-Girl
 gem 'factory_girl_rails', '~> 4.0'
 
@@ -83,6 +80,9 @@ gem 'epic-editor-rails'
 
 #Adding pagination for ease of use
 gem 'will_paginate', '~> 3.0.5'
+
+#Adding Redis
+gem 'redis'
 
 #Adding Whenever
 # gem 'whenever'

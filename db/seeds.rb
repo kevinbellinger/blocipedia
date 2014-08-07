@@ -15,7 +15,7 @@ kevin = User.new(
   )
 kevin.skip_confirmation!
 kevin.save
-
+kevin.update_attribute(:role, 'premium')
 
 
 caitlin = User.new(
@@ -26,6 +26,7 @@ caitlin = User.new(
   )
 caitlin.skip_confirmation!
 caitlin.save
+caitlin.update_attribute(:role, 'collaborator')
 
 
 # Create Extra Users
@@ -37,11 +38,8 @@ caitlin.save
     )
   user.skip_confirmation!
   user.save
-<<<<<<< HEAD
-
-=======
   user.update_attribute(:role, 'free')
->>>>>>> collaborators
+
 end
 users = User.all
 

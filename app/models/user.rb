@@ -8,9 +8,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many  :wikis
+  has_many :wikis
 
-  has_many :collaborators
+  has_and_belongs_to_many :collaborated_wikis, class_name: "Wiki"
+
   mount_uploader :avatar, AvatarUploader
 
    def role?(base_role)

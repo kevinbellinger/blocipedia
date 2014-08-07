@@ -5,7 +5,7 @@ class CollaboratorsController < ApplicationController
 
 
   def index
-    @collaborators = Collaborator.all
+    #@collaborators = Collaborator.all
   end
 
   def new
