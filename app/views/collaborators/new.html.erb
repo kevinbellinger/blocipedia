@@ -15,10 +15,10 @@
         </tr>
         <tbody>
 
-<% @collaborators.each do |collaborator| %>
+<% @users.each do |user| %>
  <tr>
-  <td><%= collaborator.name %></td>
-  <td><%= link_to '', collaborator, id: 'collaborators-update', method: :update, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
+  <td><%= user.name %></td>
+  <td><%= link_to '', collaborator_path(:wiki_id, :user_id), id: 'collaborators-update', method: :put, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
 </tr>
 <% yield %>
 

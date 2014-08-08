@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   
-resources :wikis 
+  resources :wikis 
 
-resources :collaborators
+  resources :collaborators
 
-resources :charges
-devise_for :users, :controllers => { :registrations => "registrations" }
+  resources :charges
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
   
-resources :users
+  resources :users
 
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
 
- end
+end

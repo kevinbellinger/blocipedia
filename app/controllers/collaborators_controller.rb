@@ -1,29 +1,40 @@
 class CollaboratorsController < ApplicationController
-  # respond_to :html, :js
+ respond_to :html, :js
 
-
-
-
-  def index
+ def index
     #@collaborators = Collaborator.all
   end
 
   def new
    @collaborators = User.all
+   @wiki = Wiki.find(params[:wiki_id])
+
  end
 
  def update
-     # @collaborator = Collaborators.new
+     # @collaborator = Collaborators.new 
+     @user = User.find(params[:user_id])
+     @wiki = Wiki.find(params[:wiki_id])
 
-     
-   end
+     @wiki.users << @user
+
+     @collaborator = @wiki.collaborators.build(collaborator_params)   
+     if @collaborator.save
+      redirect_to :back 
+      flash[:notice] = "Successfully added Collaborator"
+    else
+      redirect_to :back 
+      flash[:error] = "Error adding collaborator. Try again"
+    end  
+
+  end
 
   #def show
   #  @collaborator = Collaborator.find(params[:id])
   #end
 
   def create
-    @wiki = Wiki.friendly.find(params[:collaborator][:wiki_id])
+    @wiki = Wiki.find(params[:wiki_id])
     @collaborator = @wiki.collaborators.build(collaborator_params)   
     if @collaborator.save
       redirect_to :back 
@@ -35,7 +46,7 @@ class CollaboratorsController < ApplicationController
   end
 
   def destroy
-    @wikis = Wiki.find(params[:wiki_id])  
+    @wiki = Wiki.find(params[:wiki_id])  
     @collaborator = @wiki.collaborators.find(params.require(:collaborator).permit(:user_id, :wiki_id))
     
     if @collaborator.destroy
@@ -51,7 +62,7 @@ class CollaboratorsController < ApplicationController
 
   private
   def collaborator_params
-    params.require(:collaborator).permit(:allowed, :user_id, :wiki_id)
+    params.require(:collaborator).permit(:user_id, :wiki_id)
   end
 
 end
