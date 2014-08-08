@@ -10,7 +10,7 @@
      </ul>
    </div>
    <div class="col-md-8">
-     <%= form_for @wikis do |f| %>
+     <%= form_for @wiki do |f| %>
        <div class="form-group">
          <%= f.label :title %>
          <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
@@ -24,7 +24,7 @@
        </div>
       
 
-      <%= link_to "Add Collaborators", new_wiki_collaborator_path(nil, @wiki), class: 'btn btn-success' %>
+      <%= link_to "Add Collaborators", new_wiki_collaborator_path(@wiki), class: 'btn btn-success' %>
 
      <% end %>
    </div>
@@ -33,7 +33,7 @@
  <script src="epiceditor.min.js"></script>
 <script>
   var editor = new EpicEditor().load();
-  editor.getElement('editor').body.innerHTML = '<%= escape_javascript(@wikis.body) %>';
+  editor.getElement('editor').body.innerHTML = '<%= escape_javascript(@wiki.body) %>';
 
   function prep() {
     $("#body")[0].value = (editor.getElement('editor').body.innerHTML);

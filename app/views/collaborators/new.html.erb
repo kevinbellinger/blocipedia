@@ -18,7 +18,7 @@
 <% @collaborators.each do |collaborator| %>
  <tr>
   <td><%= collaborator.name %></td>
-  <td><%= link_to '', collaborator_path(:wiki_id, collaborator.id), id: 'collaborators-update', method: :put, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
+  <td><%= link_to '', new_collaborator_path(collaborator.id), id: 'collaborators-update', method: :put, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
 </tr>
 <% yield %>
 

@@ -14,7 +14,7 @@ class CollaboratorsController < ApplicationController
  def update
      # @collaborator = Collaborators.new 
      @user = User.find(params[:user_id])
-     @wiki = Wiki.find(params[:wiki_id])
+     @wiki = Wiki.friendly.find(params[:wiki_id])
 
      @wiki.users << @user
 
