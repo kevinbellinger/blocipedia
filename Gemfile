@@ -82,7 +82,7 @@ gem 'epic-editor-rails'
 gem 'will_paginate', '~> 3.0.5'
 
 #Adding Redis
-gem 'redis'
+gem 'redis', '~> 3.1.0'
 
 #Adding Whenever
 # gem 'whenever'

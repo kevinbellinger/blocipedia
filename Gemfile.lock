@@ -250,7 +250,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   rails_12factor
   redcarpet
-  redis
+  redis (~> 3.1.0)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
