@@ -6,10 +6,8 @@
     <table class="table">
       <thead >
         <tr>
-          <th>Id</th>
           <th>Name</th>
           <th>Grant Access</th>
-
         </tr>
       </thead>
       <tfoot>
@@ -17,7 +15,14 @@
         </tr>
         <tbody>
 
-          <%= render partial: 'collaborators/collaborator' %>
+<% @collaborators.each do |collaborator| %>
+ <tr>
+  <td><%= collaborator.name %></td>
+  <td><%= link_to '', collaborator, id: 'collaborators-update', method: :update, class: 'glyphicon glyphicon-ok-circle', remote: true %></td>
+</tr>
+<% yield %>
+
+        <% end %> 
         </tbody>
       </table>
     </div>

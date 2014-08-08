@@ -9,12 +9,13 @@ class CollaboratorsController < ApplicationController
   end
 
   def new
-   @collaborator = Collaborator.new 
    @collaborators = User.all
  end
 
  def update
      # @collaborator = Collaborators.new
+
+     
    end
 
   #def show
