@@ -9,6 +9,9 @@ extend FriendlyId
 
 belongs_to :user
 
+#Trying something different
+#belongs_to :collaborator
+
 has_and_belongs_to_many :users
 
 default_scope { order('created_at DESC') }
