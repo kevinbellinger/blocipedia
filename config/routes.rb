@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :wikis 
-  resources :collaborators
+#  resources :wikis 
+#  resources :collaborators
 
   #Trying to get route path correct
   resources :wikis do
-    resources :collaborators do
+    resources :collaborations do
     end
   end
 

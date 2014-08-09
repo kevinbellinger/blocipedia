@@ -1,0 +1,12 @@
+
+<ul>
+  <% @non_collaborators.each do |user| %>
+    <li>
+      <%= form_for [@wiki, Collaboration.new] do |f| %>
+        <%= f.hidden_field :user_id, value: user.id %>
+
+        <%= f.submit user.name, class: 'glyphicon glyphicon-ok-circle' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
