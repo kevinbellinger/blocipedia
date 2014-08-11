@@ -1,12 +1,27 @@
 
-<ul>
-  <% @non_collaborators.each do |user| %>
-    <li>
-      <%= form_for [@wiki, Collaboration.new] do |f| %>
-        <%= f.hidden_field :user_id, value: user.id %>
+<h1>Add Collaborator to Wiki</h1>
 
-        <%= f.submit user.name, class: 'glyphicon glyphicon-ok-circle' %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+ <div class="col-md-4">
+  <p> Click to add the user you would like to add to the list of collaborators for your wiki. </p>
+</div>
+<br>
+
+</div>
+<div class="row">
+  <div class="col-md-4">
+
+    <% @non_collaborators.each do |user| %>
+    <br>
+    <%= form_for [@wiki, Collaboration.new] do |f| %>
+    <%= f.hidden_field :user_id, value: user.id %>
+
+    <%= f.submit user.name, class: 'btn btn-success' %>
+    <% end %>
+
+    <% end %>
+    <br>
+    <%= link_to "Back to Wikis", wikis_path, class: 'btn btn-primary' %>
+  </div>
+
+</div>

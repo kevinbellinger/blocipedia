@@ -2,7 +2,6 @@ class WikisController < ApplicationController
   respond_to :html, :js
 
   def index
-    # @wikis = current_user.wikis
     @wikis = Wiki.visible_to(current_user).paginate(page: params[:page], per_page: 10)
     authorize @wikis
   end
@@ -11,25 +10,21 @@ class WikisController < ApplicationController
     @wikis = Wiki.friendly.find(params[:id])
     if request.path != wiki_path(@wikis)
       redirect_to @wikis, status: :moved_permanently
+      authorize @wikis
     end
   end
 
   def new
     @wikis = Wiki.new
     authorize @wikis
-    #adding as collab was nested under wikis in routes. Not sure am right. 
-    # @collaborators = Collaborator.new
   end
 
   def edit
-  # @wikis = Wiki.friendly.find(params[:id])
    @wiki = Wiki.friendly.find(params[:id])
    authorize @wiki
-    #adding as collab was nested under wikis in routes. Not sure am right. 
-    #@collaborators = Collaborator.new
-  end
+ end
 
-  def update
+ def update
    @wikis = Wiki.friendly.find(params[:id])
    authorize @wikis
    if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
