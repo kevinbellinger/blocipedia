@@ -12,7 +12,6 @@ class WikiPolicy < ApplicationPolicy
     user.present? || collaborator.present?
   end
 
-
   def show?
     record.public? || user.present?
    #user.where(id: collaborators.pluck(:id))

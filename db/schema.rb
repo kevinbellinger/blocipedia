@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -71,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140808224147) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "slug"
-    t.boolean  "public"
+    t.boolean  "visible" #,      default: true
   end
 
   add_index "wikis", ["slug"], name: "index_wikis_on_slug"

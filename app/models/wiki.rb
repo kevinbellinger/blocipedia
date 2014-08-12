@@ -25,5 +25,6 @@ class Wiki < ActiveRecord::Base
 
 #Adding policies for view
 #scope :visible_to, -> (user) { user ? all : where(public: true) }
-scope :visible_to, -> (user) { user ? all : where(id:collaborators.pluck(:id)) }
+#scope :visible_to, -> (user) { user ? all : where(id:collaborators.pluck(:id)) }
+scope :visible_to, ->(user) { user ? all : where(public: false)}
 end

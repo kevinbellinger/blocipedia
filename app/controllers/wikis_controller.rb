@@ -2,7 +2,7 @@ class WikisController < ApplicationController
   respond_to :html, :js
 
   def index
-    @wikis = Wiki.visible_to(current_user).paginate(page: params[:page], per_page: 10)
+    @wikis = Wiki.where(visible: true).paginate(page: params[:page], per_page: 10)
     authorize @wikis
   end
 
@@ -37,7 +37,7 @@ class WikisController < ApplicationController
  end
 
  def create
-  @wikis = current_user.wikis.build(params.require(:wiki).permit(:title, :body))
+  @wikis = current_user.wikis.build(params.require(:wiki).permit(:title, :body, :visible))
   authorize @wikis
   if @wikis.save
    flash[:notice] = "Wiki was saved."

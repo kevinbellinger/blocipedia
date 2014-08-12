@@ -28,6 +28,14 @@ caitlin.skip_confirmation!
 caitlin.save
 caitlin.update_attribute(:role, 'collaborator')
 
+david = User.new(
+  name:     'David',
+  email:    'david@example.com',
+  password: 'helloworld',
+
+  )
+david.skip_confirmation!
+david.save
 
 # Create Extra Users
 5.times do
@@ -53,8 +61,10 @@ users = User.all
      slug:   Faker::Lorem.word
 
      )
+
  end
  wikis = Wiki.all
+
  
  
  puts "Seed finished"

@@ -58,6 +58,10 @@ gem 'figaro'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  #Better Errors
+gem 'better_errors'
+
+gem 'binding_of_caller'
 end
 
 #Adding Pundit
@@ -83,6 +87,8 @@ gem 'will_paginate', '~> 3.0.5'
 
 #Adding Redis
 gem 'redis', '~> 3.1.0'
+
+
 
 #Adding Whenever
 # gem 'whenever'
