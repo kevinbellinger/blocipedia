@@ -27,7 +27,7 @@ class WikisController < ApplicationController
  def update
    @wikis = Wiki.friendly.find(params[:id])
    authorize @wikis
-   if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
+   if @wikis.update_attributes(params.require(:wiki).permit(:title, :body, :visible))
      flash[:notice] = "Wiki was updated."
      redirect_to @wikis
    else
