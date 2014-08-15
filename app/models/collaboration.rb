@@ -1,7 +1,7 @@
  class Collaboration < ActiveRecord::Base
    
     belongs_to :user
-    belongs_to :wiki
+    belongs_to :collaborated_wikis, class_name: 'Wiki', foreign_key: :wiki_id
 
 
 #   def self.users

@@ -2,7 +2,13 @@ class WikisController < ApplicationController
   respond_to :html, :js
 
   def index
-    @wikis = Wiki.where(visible: true).paginate(page: params[:page], per_page: 10)
+    # @user = current_user
+    
+    @wikis = current_user.wikis.paginate(page: params[:page], per_page: 10)
+
+    @collaborations = current_user.collaborated_wikis
+    #@collaboration = @wiki.collaboration.build(collaboration_params)
+    #@collaborations = @collaboration.where(:user_id == current_user)
     authorize @wikis
   end
 
@@ -49,5 +55,10 @@ class WikisController < ApplicationController
 
 
 end
+
+  private
+  def collaboration_params
+    params.require(:collaboration).permit(:user_id, :wiki_id)
+  end
 
 end

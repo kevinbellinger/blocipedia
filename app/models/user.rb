@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
 
  # delegate :wikis, to: :collaborations
 
-  has_many :wikis, through: :collaborations
+  has_many :collaborations
+  has_many :collaborated_wikis, through: :collaborations
 
   def collaborations
      Collaboration.where(user_id: id)
@@ -22,7 +23,7 @@ class User < ActiveRecord::Base
 
   has_many :wikis
 
-  has_and_belongs_to_many :collaborated_wikis, class_name: "Wiki"
+  #has_and_belongs_to_many :collaborated_wikis, class_name: "Wiki"
 
   mount_uploader :avatar, AvatarUploader
 
